@@ -19,6 +19,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "crc.h"
+#include "spi.h"
 #include "tim.h"
 #include "usart.h"
 #include "gpio.h"
@@ -99,6 +100,7 @@ int main(void)
   MX_USART1_UART_Init();
   MX_CRC_Init();
   MX_TIM7_Init();
+  MX_SPI2_Init();
   MX_TouchGFX_Init();
   /* USER CODE BEGIN 2 */
   printf("\x1b[2J\x1b[;H");
@@ -108,8 +110,6 @@ int main(void)
   HAL_TIM_Base_Start_IT(&htim7);
   lcdBacklightOn();
   lcdInit();
-  lcdTest();
-  HAL_Delay(1000);
   /* USER CODE END 2 */
 
   /* Infinite loop */
