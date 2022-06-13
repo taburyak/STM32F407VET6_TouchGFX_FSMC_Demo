@@ -11,6 +11,10 @@ public:
     virtual ~Screen2View() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+
+    virtual void function1();
+    virtual void function2();
+    virtual void function3();
 protected:
 };
 

@@ -20,8 +20,37 @@ Screen2ViewBase::Screen2ViewBase() :
     buttonWithLabel1.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonWithLabel1.setAction(buttonCallback);
 
+    digitalClock1.setPosition(25, 0, 190, 48);
+    digitalClock1.setColor(touchgfx::Color::getColorFromRGB(245, 233, 98));
+    digitalClock1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_K2U3));
+    digitalClock1.displayLeadingZeroForHourIndicator(true);
+    digitalClock1.setDisplayMode(touchgfx::DigitalClock::DISPLAY_24_HOUR);
+    digitalClock1.setTime24Hour(10, 10, 0);
+
+    repeatButton1.setXY(25, 48);
+    repeatButton1.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID));
+    repeatButton1.setDelay(12);
+    repeatButton1.setInterval(6);
+    repeatButton1.setAction(buttonCallback);
+
+    repeatButton2.setXY(90, 48);
+    repeatButton2.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID));
+    repeatButton2.setDelay(12);
+    repeatButton2.setInterval(6);
+    repeatButton2.setAction(buttonCallback);
+
+    repeatButton3.setXY(155, 48);
+    repeatButton3.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID));
+    repeatButton3.setDelay(12);
+    repeatButton3.setInterval(6);
+    repeatButton3.setAction(buttonCallback);
+
     add(__background);
     add(buttonWithLabel1);
+    add(digitalClock1);
+    add(repeatButton1);
+    add(repeatButton2);
+    add(repeatButton3);
 }
 
 void Screen2ViewBase::setupScreen()
@@ -37,5 +66,26 @@ void Screen2ViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
         //When buttonWithLabel1 clicked change screen to screen1
         //Go to screen1 with screen transition towards East
         application().gotoscreen1ScreenWipeTransitionEast();
+    }
+    else if (&src == &repeatButton1)
+    {
+        //Interaction2
+        //When repeatButton1 clicked call virtual function
+        //Call function1
+        function1();
+    }
+    else if (&src == &repeatButton2)
+    {
+        //Interaction3
+        //When repeatButton2 clicked call virtual function
+        //Call function2
+        function2();
+    }
+    else if (&src == &repeatButton3)
+    {
+        //Interaction4
+        //When repeatButton3 clicked call virtual function
+        //Call function3
+        function3();
     }
 }

@@ -94,6 +94,62 @@
             },
             "TextRotation": "0",
             "Style": "Style4"
+          },
+          {
+            "Type": "DigitalClock",
+            "Name": "digitalClock1",
+            "X": 25,
+            "Width": 190,
+            "Height": 48,
+            "TextColor": {
+              "Red": 245,
+              "Green": 233,
+              "Blue": 98
+            },
+            "TextId": "__SingleUse_K2U3",
+            "DisplaySeconds": true,
+            "DisplayLeadingZeroForHourIndicator": true,
+            "InitialHour": 10,
+            "InitialMinute": 10
+          },
+          {
+            "Type": "RepeatButton",
+            "Name": "repeatButton1",
+            "X": 25,
+            "Y": 48,
+            "Width": 60,
+            "Height": 60,
+            "Pressed": "__designer\\Blue_Buttons_Round_Edge_icon_button_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_Edge_icon_button.png",
+            "Delay": 200,
+            "Interval": 100,
+            "Style": "Style1"
+          },
+          {
+            "Type": "RepeatButton",
+            "Name": "repeatButton2",
+            "X": 90,
+            "Y": 48,
+            "Width": 60,
+            "Height": 60,
+            "Pressed": "__designer\\Blue_Buttons_Round_Edge_icon_button_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_Edge_icon_button.png",
+            "Delay": 200,
+            "Interval": 100,
+            "Style": "Style1"
+          },
+          {
+            "Type": "RepeatButton",
+            "Name": "repeatButton3",
+            "X": 155,
+            "Y": 48,
+            "Width": 60,
+            "Height": 60,
+            "Pressed": "__designer\\Blue_Buttons_Round_Edge_icon_button_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_Edge_icon_button.png",
+            "Delay": 200,
+            "Interval": 100,
+            "Style": "Style1"
           }
         ],
         "Interactions": [
@@ -108,6 +164,39 @@
               "ScreenTransitionType": "ScreenTransitionWipe",
               "ScreenTransitionDirection": "East",
               "ActionComponent": "screen1"
+            }
+          },
+          {
+            "InteractionName": "Interaction2",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "repeatButton1"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "function1"
+            }
+          },
+          {
+            "InteractionName": "Interaction3",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "repeatButton2"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "function2"
+            }
+          },
+          {
+            "InteractionName": "Interaction4",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "repeatButton3"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "function3"
             }
           }
         ]
