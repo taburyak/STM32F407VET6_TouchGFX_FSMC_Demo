@@ -9,6 +9,8 @@
 #include <gui/screen2_screen/Screen2Presenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
+#include <touchgfx/containers/clock/DigitalClock.hpp>
+#include <touchgfx/widgets/RepeatButton.hpp>
 
 class Screen2ViewBase : public touchgfx::View<Screen2Presenter>
 {
@@ -16,6 +18,24 @@ public:
     Screen2ViewBase();
     virtual ~Screen2ViewBase() {}
     virtual void setupScreen();
+
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void function1()
+    {
+        // Override and implement this function in Screen2
+    }
+
+    virtual void function2()
+    {
+        // Override and implement this function in Screen2
+    }
+
+    virtual void function3()
+    {
+        // Override and implement this function in Screen2
+    }
 
 protected:
     FrontendApplication& application() {
@@ -27,6 +47,10 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::ButtonWithLabel buttonWithLabel1;
+    touchgfx::DigitalClock digitalClock1;
+    touchgfx::RepeatButton repeatButton1;
+    touchgfx::RepeatButton repeatButton2;
+    touchgfx::RepeatButton repeatButton3;
 
 private:
 
