@@ -27,6 +27,9 @@ public:
 
     virtual ~Screen2Presenter() {};
 
+    void updateTime(uint8_t hour, uint8_t minute, uint8_t second);
+    void UI_GetTime();
+
 private:
     Screen2Presenter();
 

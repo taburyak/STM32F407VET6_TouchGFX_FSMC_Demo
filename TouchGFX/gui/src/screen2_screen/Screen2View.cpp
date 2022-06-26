@@ -8,6 +8,7 @@ Screen2View::Screen2View()
 void Screen2View::setupScreen()
 {
     Screen2ViewBase::setupScreen();
+    presenter->UI_GetTime();
 }
 
 void Screen2View::tearDownScreen()
@@ -28,4 +29,9 @@ void Screen2View::function2()
 void Screen2View::function3()
 {
 	digitalClock1.setTime24Hour(digitalClock1.getCurrentHour(), digitalClock1.getCurrentMinute(), digitalClock1.getCurrentSecond() + 1);
+}
+
+void Screen2View::updateTime(uint8_t hour, uint8_t minute, uint8_t second)
+{
+	digitalClock1.setTime24Hour(hour, minute, second);
 }

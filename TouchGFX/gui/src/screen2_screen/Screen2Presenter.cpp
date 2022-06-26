@@ -16,3 +16,13 @@ void Screen2Presenter::deactivate()
 {
 
 }
+
+void Screen2Presenter::updateTime(uint8_t hour, uint8_t minute, uint8_t second)
+{
+	view.updateTime(hour, minute, second);
+}
+
+void Screen2Presenter::UI_GetTime()
+{
+	model->HW_GetTime();
+}
