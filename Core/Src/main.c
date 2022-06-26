@@ -19,6 +19,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "crc.h"
+#include "rtc.h"
 #include "spi.h"
 #include "tim.h"
 #include "usart.h"
@@ -40,6 +41,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -50,13 +52,13 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+uint8_t flagOnePerSecond = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
-
+RTC_TimeTypeDef ShowRTC_Calendar(void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -101,6 +103,7 @@ int main(void)
   MX_CRC_Init();
   MX_TIM7_Init();
   MX_SPI2_Init();
+  MX_RTC_Init();
   MX_TouchGFX_Init();
   /* USER CODE BEGIN 2 */
   printf("\x1b[2J\x1b[;H");
@@ -141,8 +144,9 @@ void SystemClock_Config(void)
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE|RCC_OSCILLATORTYPE_LSE;
   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+  RCC_OscInitStruct.LSEState = RCC_LSE_ON;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
   RCC_OscInitStruct.PLL.PLLM = 4;
@@ -175,6 +179,27 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 	if (htim->Instance == TIM7)
 	{
 		touchgfxSignalVSync();
+	}
+}
+
+RTC_TimeTypeDef ShowRTC_Calendar(void)
+{
+	RTC_TimeTypeDef sTime = {0};
+	RTC_DateTypeDef sDate = {0};
+	HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
+	HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
+	printf("Data: %.2d-%.2d-%.2d-%.2d\r\n", sDate.Date, sDate.Month, sDate.Year, sDate.WeekDay);
+	printf("Time: %.2d:%.2d:%.2d\r\n", sTime.Hours, sTime.Minutes, sTime.Seconds);
+	printf("\x1b[1F");
+	printf("\x1b[1F");
+	return sTime;
+}
+
+void HAL_RTC_AlarmAEventCallback(RTC_HandleTypeDef *hrtc)
+{
+	if(hrtc->Instance == RTC)
+	{
+		flagOnePerSecond = 1;
 	}
 }
 /* USER CODE END 4 */

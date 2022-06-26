@@ -1,6 +1,8 @@
 #ifndef MODEL_HPP
 #define MODEL_HPP
 
+#include "main.h"
+
 class ModelListener;
 
 class Model
@@ -14,6 +16,8 @@ public:
     }
 
     void tick();
+    void HW_GetTime(void);
+
 protected:
     ModelListener* modelListener;
 };

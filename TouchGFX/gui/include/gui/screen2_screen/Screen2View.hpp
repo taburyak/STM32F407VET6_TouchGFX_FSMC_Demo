@@ -15,6 +15,7 @@ public:
     virtual void function1();
     virtual void function2();
     virtual void function3();
+    void updateTime(uint8_t hour, uint8_t minute, uint8_t second);
 protected:
 };
 
