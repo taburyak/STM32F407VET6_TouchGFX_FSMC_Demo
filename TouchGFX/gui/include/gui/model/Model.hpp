@@ -17,6 +17,7 @@ public:
 
     void tick();
     void HW_GetTime(void);
+    void HW_SetTime(uint8_t hours, uint8_t minutes, uint8_t seconds);
 protected:
     ModelListener* modelListener;
 };
