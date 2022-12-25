@@ -22,7 +22,6 @@
 
 /* USER CODE BEGIN 0 */
 #include <stdio.h>
-
 /* USER CODE END 0 */
 
 RTC_HandleTypeDef hrtc;
