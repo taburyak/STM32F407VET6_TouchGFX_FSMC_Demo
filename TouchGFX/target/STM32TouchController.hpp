@@ -24,7 +24,7 @@
 #define STM32TOUCHCONTROLLER_HPP
 
 #include <platform/driver/touch/TouchController.hpp>
-#include "XPT2046_touch.h"
+
 /**
  * @class STM32TouchController
  *

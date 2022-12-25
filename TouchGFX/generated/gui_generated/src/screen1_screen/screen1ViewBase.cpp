@@ -6,8 +6,7 @@
 #include <texts/TextKeysAndLanguages.hpp>
 #include <BitmapDatabase.hpp>
 
-screen1ViewBase::screen1ViewBase() :
-    buttonCallback(this, &screen1ViewBase::buttonCallbackHandler)
+screen1ViewBase::screen1ViewBase()
 {
 
     __background.setPosition(0, 0, 240, 320);
@@ -27,7 +26,6 @@ screen1ViewBase::screen1ViewBase() :
     buttonWithLabel1.setLabelText(touchgfx::TypedText(T___SINGLEUSE_J1SE));
     buttonWithLabel1.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonWithLabel1.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonWithLabel1.setAction(buttonCallback);
 
     add(__background);
     add(textArea1);
@@ -38,15 +36,4 @@ screen1ViewBase::screen1ViewBase() :
 void screen1ViewBase::setupScreen()
 {
 
-}
-
-void screen1ViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
-{
-    if (&src == &buttonWithLabel1)
-    {
-        //Interaction1
-        //When buttonWithLabel1 clicked change screen to Screen2
-        //Go to Screen2 with no screen transition
-        application().gotoScreen2ScreenNoTransition();
-    }
 }
