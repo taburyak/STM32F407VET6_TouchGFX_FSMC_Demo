@@ -201,20 +201,6 @@ RTC_TimeTypeDef ShowRTC_Calendar(void)
 	return sTime;
 }
 
-void SetTime(uint8_t hours, uint8_t minutes, uint8_t seconds)
-{
-	RTC_TimeTypeDef sTime = {0};
-	/** Initialize RTC and set the Time and Date */
-	sTime.Hours = hours;
-	sTime.Minutes = minutes;
-	sTime.Seconds = seconds;
-	if (HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BIN) != HAL_OK)
-	{
-		Error_Handler();
-	}
-	HAL_RTCEx_BKUPWrite(&hrtc, RTC_BKP_DR1, MAGIC_NUMBER);
-}
-
 void HAL_RTC_AlarmAEventCallback(RTC_HandleTypeDef *hrtc)
 {
 	if(hrtc->Instance == RTC)
