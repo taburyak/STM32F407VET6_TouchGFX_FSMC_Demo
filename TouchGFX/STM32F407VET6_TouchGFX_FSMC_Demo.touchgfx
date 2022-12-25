@@ -198,6 +198,29 @@
               "Type": "ActionCustom",
               "FunctionName": "function3"
             }
+          },
+          {
+            "InteractionName": "Interaction5",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked",
+              "Name": "KEY0"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "function4"
+            }
+          },
+          {
+            "InteractionName": "Interaction6",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked",
+              "ButtonKey": 1,
+              "Name": "KEY1"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "function5"
+            }
           }
         ]
       }
@@ -230,7 +253,15 @@
         "Height": 320
       }
     ],
-    "PhysicalButtons": [],
+    "PhysicalButtons": [
+      {
+        "Name": "KEY0"
+      },
+      {
+        "Key": 1,
+        "Name": "KEY1"
+      }
+    ],
     "FrameworkFeatures": {
       "LCD16bpp": {
         "Id": "LCD16bpp",

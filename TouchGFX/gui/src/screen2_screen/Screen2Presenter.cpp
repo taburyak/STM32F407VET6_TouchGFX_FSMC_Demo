@@ -26,3 +26,8 @@ void Screen2Presenter::UI_GetTime()
 {
 	model->HW_GetTime();
 }
+
+void Screen2Presenter::UI_SetTime(uint8_t hours, uint8_t minutes, uint8_t seconds)
+{
+	model->HW_SetTime(hours, minutes, seconds);
+}

@@ -21,6 +21,9 @@
 #include <TouchGFXHAL.hpp>
 
 /* USER CODE BEGIN TouchGFXHAL.cpp */
+#include "MyButtonController.hpp"
+
+MyButtonController bc;
 
 using namespace touchgfx;
 
@@ -48,6 +51,7 @@ void TouchGFXHAL::initialize()
     // Please note, HAL::initialize() must be called to initialize the framework.
 
     TouchGFXGeneratedHAL::initialize();
+    setButtonController(&bc);
 }
 
 /**

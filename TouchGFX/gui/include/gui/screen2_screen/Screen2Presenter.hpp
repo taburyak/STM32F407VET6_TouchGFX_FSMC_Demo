@@ -29,6 +29,7 @@ public:
 
     void updateTime(uint8_t hour, uint8_t minute, uint8_t second);
     void UI_GetTime();
+    void UI_SetTime(uint8_t hours, uint8_t minutes, uint8_t seconds);
 
 private:
     Screen2Presenter();
