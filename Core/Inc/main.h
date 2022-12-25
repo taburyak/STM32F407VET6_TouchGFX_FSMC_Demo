@@ -46,7 +46,7 @@ extern "C" {
 
 /* Exported macro ------------------------------------------------------------*/
 /* USER CODE BEGIN EM */
-
+#define MAGIC_NUMBER	0x13FA
 /* USER CODE END EM */
 
 /* Exported functions prototypes ---------------------------------------------*/

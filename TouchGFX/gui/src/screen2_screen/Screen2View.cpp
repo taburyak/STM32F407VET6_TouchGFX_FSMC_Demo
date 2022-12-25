@@ -30,16 +30,9 @@ void Screen2View::function2()
 
 void Screen2View::function3()
 {
-	if(digitalClock1.getCurrentSecond() > 29)
+	if(digitalClock1.getCurrentSecond() > 30)
 	{
-		if(digitalClock1.getCurrentMinute() == 59)
-		{
-			digitalClock1.setTime24Hour(digitalClock1.getCurrentHour() + 1, digitalClock1.getCurrentMinute() + 1, 0);
-		}
-		else
-		{
-			digitalClock1.setTime24Hour(digitalClock1.getCurrentHour(), digitalClock1.getCurrentMinute() + 1, 0);
-		}
+		digitalClock1.setTime24Hour(digitalClock1.getCurrentHour(), digitalClock1.getCurrentMinute() + 1, 0);
 	}
 	else
 	{
