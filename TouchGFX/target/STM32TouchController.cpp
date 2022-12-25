@@ -21,6 +21,7 @@
 /* USER CODE BEGIN STM32TouchController */
 
 #include <STM32TouchController.hpp>
+#include "XPT2046_touch.h"
 
 void STM32TouchController::init()
 {
