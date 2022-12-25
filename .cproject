@@ -71,7 +71,6 @@
 								</option>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.compiler.option.includepaths.1776191561" name="Include paths (-I)" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.compiler.option.includepaths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="../Core/Inc"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Drivers/STM32_ILI9341_Simple/inc}&quot;"/>
 									<listOptionValue builtIn="false" value="../TouchGFX/App"/>
 									<listOptionValue builtIn="false" value="../TouchGFX/target/generated"/>
 									<listOptionValue builtIn="false" value="../TouchGFX/target"/>
