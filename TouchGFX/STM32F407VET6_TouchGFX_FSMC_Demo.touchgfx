@@ -73,66 +73,10 @@
         "Name": "Screen2",
         "Components": [
           {
-            "Type": "DigitalClock",
-            "Name": "digitalClock1",
-            "X": 24,
-            "Width": 193,
-            "Height": 49,
-            "TextColor": {
-              "Red": 235,
-              "Green": 201,
-              "Blue": 9
-            },
-            "TextId": "__SingleUse_ASEK",
-            "DisplaySeconds": true,
-            "DisplayLeadingZeroForHourIndicator": true,
-            "InitialHour": 10,
-            "InitialMinute": 10
-          },
-          {
-            "Type": "RepeatButton",
-            "Name": "repeatButton1",
-            "X": 24,
-            "Y": 80,
-            "Width": 60,
-            "Height": 60,
-            "Pressed": "__designer\\Blue_Buttons_Round_Edge_icon_button_pressed.png",
-            "Released": "__designer\\Blue_Buttons_Round_Edge_icon_button.png",
-            "Delay": 200,
-            "Interval": 200,
-            "Style": "Style1"
-          },
-          {
-            "Type": "RepeatButton",
-            "Name": "repeatButton2",
-            "X": 90,
-            "Y": 80,
-            "Width": 60,
-            "Height": 60,
-            "Pressed": "__designer\\Blue_Buttons_Round_Edge_icon_button_pressed.png",
-            "Released": "__designer\\Blue_Buttons_Round_Edge_icon_button.png",
-            "Delay": 200,
-            "Interval": 200,
-            "Style": "Style1"
-          },
-          {
-            "Type": "RepeatButton",
-            "Name": "repeatButton3",
-            "X": 157,
-            "Y": 80,
-            "Width": 60,
-            "Height": 60,
-            "Pressed": "__designer\\Blue_Buttons_Round_Edge_icon_button_pressed.png",
-            "Released": "__designer\\Blue_Buttons_Round_Edge_icon_button.png",
-            "Delay": 200,
-            "Interval": 200,
-            "Style": "Style1"
-          },
-          {
             "Type": "ButtonWithLabel",
             "Name": "buttonWithLabel1",
             "X": 35,
-            "Y": 160,
+            "Y": 243,
             "Width": 170,
             "Height": 60,
             "Pressed": "__designer\\Blue_Buttons_Round_Edge_small_pressed.png",
@@ -161,41 +105,9 @@
             },
             "Action": {
               "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionNone",
+              "ScreenTransitionType": "ScreenTransitionWipe",
+              "ScreenTransitionDirection": "East",
               "ActionComponent": "screen1"
-            }
-          },
-          {
-            "InteractionName": "Interaction2",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "repeatButton1"
-            },
-            "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "function1"
-            }
-          },
-          {
-            "InteractionName": "Interaction3",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "repeatButton2"
-            },
-            "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "function2"
-            }
-          },
-          {
-            "InteractionName": "Interaction4",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "repeatButton3"
-            },
-            "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "function3"
             }
           }
         ]
