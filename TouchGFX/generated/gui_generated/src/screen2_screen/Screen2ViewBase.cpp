@@ -58,6 +58,25 @@ void Screen2ViewBase::setupScreen()
 
 }
 
+//Handles when a key is pressed
+void Screen2ViewBase::handleKeyEvent(uint8_t key)
+{
+    if(0 == key)
+    {
+        //Interaction5
+        //When hardware button 0 clicked call virtual function
+        //Call function4
+        function4();
+    }
+    if(1 == key)
+    {
+        //Interaction6
+        //When hardware button 1 clicked call virtual function
+        //Call function5
+        function5();
+    }
+}
+
 void Screen2ViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
 {
     if (&src == &buttonWithLabel1)

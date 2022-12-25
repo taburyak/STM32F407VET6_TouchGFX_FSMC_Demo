@@ -52,6 +52,7 @@
 
 /* USER CODE BEGIN PV */
 uint8_t flagOnePerSecond = 0;
+__IO uint8_t userButtonState = 255;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -206,6 +207,26 @@ void HAL_RTC_AlarmAEventCallback(RTC_HandleTypeDef *hrtc)
 	if(hrtc->Instance == RTC)
 	{
 		flagOnePerSecond = 1;
+	}
+}
+
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+	if (GPIO_Pin == KEY0_Pin)
+	{
+		userButtonState = 0;
+		printf("KEY0 is pressed!\r\n");
+		printf("\x1b[1F");
+	}
+	else if (GPIO_Pin == KEY1_Pin)
+	{
+		userButtonState = 1;
+		printf("KEY1 is pressed!\r\n");
+		printf("\x1b[1F");
+	}
+	else
+	{
+		__NOP();
 	}
 }
 /* USER CODE END 4 */
