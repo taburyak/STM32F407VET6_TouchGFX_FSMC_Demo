@@ -42,6 +42,16 @@ void Screen2View::function3()
 	presenter->UI_SetTime(digitalClock1.getCurrentHour(), digitalClock1.getCurrentMinute(), digitalClock1.getCurrentSecond());
 }
 
+void Screen2View::function4()
+{
+	function1();
+}
+
+void Screen2View::function5()
+{
+	function2();
+}
+
 void Screen2View::updateTime(uint8_t hour, uint8_t minute, uint8_t second)
 {
 	digitalClock1.setTime24Hour(hour, minute, second);

@@ -18,6 +18,7 @@ public:
     Screen2ViewBase();
     virtual ~Screen2ViewBase() {}
     virtual void setupScreen();
+    virtual void handleKeyEvent(uint8_t key);
 
     /*
      * Virtual Action Handlers
@@ -33,6 +34,16 @@ public:
     }
 
     virtual void function3()
+    {
+        // Override and implement this function in Screen2
+    }
+
+    virtual void function4()
+    {
+        // Override and implement this function in Screen2
+    }
+
+    virtual void function5()
     {
         // Override and implement this function in Screen2
     }
