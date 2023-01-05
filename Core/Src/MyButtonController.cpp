@@ -1,9 +1,10 @@
 /*
  * MyButtonController.cpp
  *
- *  Created on: Mar 31, 2022
+ *  Created on: Dec 25, 2022
  *      Author: tabur
  */
+
 #include <MyButtonController.hpp>
 #include <main.h>
 #include <touchgfx/hal/HAL.hpp>
@@ -39,3 +40,5 @@ bool MyButtonController::sample(uint8_t& key)
 
 	return false;
 }
+
+
